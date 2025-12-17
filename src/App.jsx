@@ -1,10 +1,9 @@
-import Counter from './Counter';
+import Calculator from "./Calculator";
 
 function App() {
   return (
     <div>
-      <h2>Counter App</h2>
-      <Counter />
+      <Calculator />
     </div>
   );
 }
