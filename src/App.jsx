@@ -1,9 +1,10 @@
-import MainPage from './MainPage';
+import Counter from './Counter';
 
 function App() {
   return (
     <div>
-      <MainPage />
+      <h2>Counter App</h2>
+      <Counter />
     </div>
   );
 }
