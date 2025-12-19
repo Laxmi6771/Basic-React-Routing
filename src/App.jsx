@@ -1,19 +1,28 @@
 import { useState } from "react";
-import ComponentA from "./ComponentA";
-import ComponentB from "./ComponentB";
 
 function App() {
-  const [status, setStatus] = useState(false);
+  const [isRed, setIsRed] = useState(true);
 
   return (
     <div style={{ padding: "20px" }}>
-      <button onClick={() => setStatus(!status)}>
-        Toggle Status
+      <div
+        style={{
+          width: "200px",
+          height: "100px",
+          backgroundColor: isRed ? "red" : "blue",
+          color: "white",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          marginBottom: "10px",
+        }}
+      >
+        Color Toggle Div
+      </div>
+
+      <button onClick={() => setIsRed(!isRed)}>
+        Change Color
       </button>
-
-      <br /><br />
-
-      {status ? <ComponentA /> : <ComponentB />}
     </div>
   );
 }
