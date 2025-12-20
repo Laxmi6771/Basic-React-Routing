@@ -1,20 +1,8 @@
-import { useState } from "react";
-import TodosList from "./TodosList";
+import VideoPlayer from "./VideoPlayer";
 
 function App() {
-  const [showTodos, setShowTodos] = useState(true);
-
-  return (
-    <div style={{ padding: "20px" }}>
-      <button onClick={() => setShowTodos(false)}>
-        Unmount Todos
-      </button>
-
-      <br /><br />
-
-      {showTodos && <TodosList />}
-    </div>
-  );
+  return <VideoPlayer />;
 }
 
 export default App;
+
