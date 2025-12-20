@@ -1,35 +1,17 @@
-import { useEffect, useState } from "react";
-import TodoCard from "./TodoCard";
+import { useContext } from "react";
+import { TodoContext } from "../context/TodoContext";
+import TodoItem from "./TodoItem";
 
-function TodosList() {
-  const [todos, setTodos] = useState([]);
-
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/todos")
-      .then((res) => res.json())
-      .then((data) => {
-        setTodos(data.slice(0, 15));
-      });
-
-    // cleanup function
-    return () => {
-      alert("cleanup worked");
-    };
-  }, []);
+function TodoList() {
+  const { todos } = useContext(TodoContext);
 
   return (
     <div>
-      <h2>Todo List</h2>
       {todos.map((todo) => (
-        <TodoCard
-          key={todo.id}
-          userId={todo.userId}
-          title={todo.title}
-          completed={todo.completed}
-        />
+        <TodoItem key={todo.id} id={todo.id} />
       ))}
     </div>
   );
 }
 
-export default TodosList;
+export default TodoList;
