@@ -1,8 +1,9 @@
-import VideoPlayer from "./VideoPlayer";
+import Component1 from "./Component1";
 
 function App() {
-  return <VideoPlayer />;
+  return <Component1 />;
 }
 
 export default App;
+
 
