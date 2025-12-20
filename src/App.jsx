@@ -1,9 +1,10 @@
-import Component1 from "./Component1";
+import Component1 from "./components/Component1";
 
 function App() {
   return <Component1 />;
 }
 
 export default App;
+
 
 

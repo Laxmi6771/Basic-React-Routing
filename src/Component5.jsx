@@ -1,11 +1,14 @@
+import { useContext } from "react";
+import { AppContext } from "../context/AppContext";
 import Component6 from "./Component6";
 
-function Component5({ e, f }) {
+function Component5() {
+  const { f } = useContext(AppContext);
+
   return (
     <div>
       <h4>This is prop f: {f}</h4>
-
-      <Component6 e={e} />
+      <Component6 />
     </div>
   );
 }
