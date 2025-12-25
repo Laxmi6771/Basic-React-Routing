@@ -1,21 +1,34 @@
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import About from "./pages/About";
+import Login from "./pages/Login";
 import Todos from "./pages/Todos";
-import NotFound from "./pages/NotFound";
+import TodoDetails from "./pages/TodoDetails";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/aboutus" element={<About />} />
-        <Route path="/todos" element={<Todos />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+
+      <Route
+        path="/todos"
+        element={
+          <ProtectedRoute>
+            <Todos />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/todos/:todoId"
+        element={
+          <ProtectedRoute>
+            <TodoDetails />
+          </ProtectedRoute>
+        }
+      />
+    </Routes>
   );
 }
 
